@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chattingu — Live Global Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Chattingu</h1>
+        <p>Live chat for everyone on this website.</p>
+      </header>
+
+      <section class="card settings" aria-label="Profile settings">
+        <label for="nameInput">Your name</label>
+        <div class="settings__row">
+          <input id="nameInput" type="text" maxlength="24" placeholder="Type your name..." autocomplete="nickname" />
+          <button id="saveNameBtn" type="button">Save</button>
+        </div>
+        <small id="statusText" aria-live="polite">Connecting...</small>
+      </section>
+
+      <section class="card chat" aria-label="Global chat">
+        <ul id="messages" class="messages" aria-live="polite"></ul>
+
+        <form id="chatForm" class="composer" autocomplete="off">
+          <input
+            id="messageInput"
+            type="text"
+            maxlength="400"
+            placeholder="Write your message..."
+            required
+            aria-label="Message"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
